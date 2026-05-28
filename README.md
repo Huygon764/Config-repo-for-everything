@@ -7,6 +7,7 @@ Personal dotfiles for **Cursor** and **Claude Code** — global rules and agent 
 ```
 .
 ├── install.sh              # Symlink or copy config into ~
+├── sync-from-laptop.sh     # Copy ~/.cursor and ~/.claude back into repo
 ├── cursor/
 │   ├── rules/
 │   │   └── core.mdc        # Cursor global rules (always apply)
@@ -67,6 +68,16 @@ git add -A && git commit -m "your message" && git push
 On another machine: `git pull` only.
 
 Copy install (`./install.sh --copy`) does not auto-update — re-run `./install.sh --copy` after each pull.
+
+If you edited config under `~/.cursor` or `~/.claude` directly (not via symlink), pull changes into the repo before commit:
+
+```bash
+./sync-from-laptop.sh
+git diff
+git add -A && git commit -m "your message" && git push
+```
+
+Symlink install: edits in `~` are already repo files — skip sync.
 
 ## For AI assistants
 
