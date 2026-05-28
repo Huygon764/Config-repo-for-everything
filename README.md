@@ -35,33 +35,38 @@ Personal dotfiles for **Cursor** and **Claude Code** — global rules and agent 
 
 **Note:** Cursor skills live in `~/.cursor/skills/`, not `~/.cursor/skills-cursor/` (that directory is Cursor built-in).
 
-## Quick start (new machine)
+## Workflow
+
+Repo lives on disk (e.g. `~/boh/Config-repo-for-everything`). Config in `~/.cursor` and `~/.claude` points at files **inside that folder** via symlinks.
+
+**First time (new machine):**
 
 ```bash
-git clone https://github.com/Huygon764/Config-repo-for-everything.git
-cd Config-repo-for-everything
+git clone https://github.com/Huygon764/Config-repo-for-everything.git ~/boh/Config-repo-for-everything
+cd ~/boh/Config-repo-for-everything
 chmod +x install.sh
 ./install.sh
 ```
 
-Default install uses **symlinks**, so `git pull` in this repo updates config on disk automatically.
-
-Copy instead of symlink:
+**Get updates (any machine already set up):**
 
 ```bash
-./install.sh --copy
-```
-
-Existing files are backed up as `*.backup.<timestamp>` before overwrite.
-
-## Update an existing machine
-
-```bash
-cd Config-repo-for-everything
+cd ~/boh/Config-repo-for-everything   # path where you cloned
 git pull
-# Symlink install: no re-run needed
-# Copy install: re-run ./install.sh --copy
 ```
+
+No second `./install.sh` needed — symlinks already point into the repo, so pulled files are what Cursor/Claude read.
+
+**Edit config:** change files in the repo (or edit via symlinks in `~`), then commit and push from the repo:
+
+```bash
+cd ~/boh/Config-repo-for-everything
+git add -A && git commit -m "your message" && git push
+```
+
+On another machine: `git pull` only.
+
+Copy install (`./install.sh --copy`) does not auto-update — re-run `./install.sh --copy` after each pull.
 
 ## For AI assistants
 
@@ -70,7 +75,7 @@ When helping with this repo:
 - This is a **config/dotfiles** repo, not application source code.
 - `cursor/` and `claude/` are kept in sync conceptually; skills share the same workflows.
 - `claude/CLAUDE.md` and `cursor/rules/core.mdc` are separate sources (Claude vs Cursor), not copies of each other.
-- Changes here should be installed with `./install.sh` on the target machine.
+- Run `./install.sh` on the target machine to symlink config into `~`
 - Do **not** commit secrets (`.env`, API keys, credentials).
 
 ## Not included
