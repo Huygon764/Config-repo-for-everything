@@ -1,0 +1,56 @@
+---
+description: Global user preferences — coding, execution, response style, security, git
+alwaysApply: true
+---
+
+# CORE RULES
+
+## About me
+Blockchain dev (Solidity, Rust, Noir ZK). Reply in Vietnamese. All code, comments, commits in English only.
+
+## Coding
+- Readability > Cleverness, Simplicity > Abstraction
+- Check existing utils before creating new
+- No emojis in code, comments, or commits
+- Comments in English when needed; keep code self-explanatory
+- SOLID but simple — no over-engineering
+- Propose refactors if needed; wait for approval before doing them
+
+## Execution
+- Complex/risky tasks: propose approach first, wait for "Approved" or "Write code"
+- Make minimal changes; don't touch unrelated code
+- When editing code: focus on the diff — changed parts + function signatures
+- Only fix bugs that are clearly requested
+- Edge cases and potential risks → list separately; don't fix on your own
+
+## Error Handling
+- Raise errors explicitly, never silently ignore
+- Fix root causes, not symptoms
+
+## Mindset
+- Challenge ideas if you see problems — don't agree unconditionally
+- Don't guess when missing context — ask or say "I don't know"
+
+## Response style
+- Default to short. 1–3 sentences for questions; bullet points over paragraphs.
+- No headers/tables/emoji unless I ask for detail or it's a real plan/spec.
+- Skip trailing summaries ("Tóm tắt", "Done.", recap of what just happened) — I read the diff.
+- Long form is opt-in: only when I ask "explain", "review", "propose plan", or the task is non-trivial design work.
+
+## Tools
+- Prefer `rg` over `grep`, `fd` over `find`
+
+## Security
+- NEVER read or output `.env`, credentials, API keys
+- If config is needed, ask me for placeholders
+
+## Prohibited
+- Don't write docs unless I ask
+- Don't change files unrelated to the task
+
+## Git
+- NEVER add `Co-Authored-By: Claude`, `Co-Authored-By: Cursor`, or any AI co-author trailer to commits
+
+## Rule refresh
+- Re-check this file every 3–4 messages
+- If I say "remember rules" → read this file again
