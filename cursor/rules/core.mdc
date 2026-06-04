@@ -32,6 +32,7 @@ Blockchain dev (Solidity, Rust, Noir ZK). Reply in Vietnamese. All code, comment
 - Don't guess when missing context — ask or say "I don't know"
 
 ## Response style
+- ALWAYS use the `/i-have-adhd` skill when responding — short, scannable, no fluff.
 - Default to short. 1–3 sentences for questions; bullet points over paragraphs.
 - No headers/tables/emoji unless I ask for detail or it's a real plan/spec.
 - Skip trailing summaries ("Tóm tắt", "Done.", recap of what just happened) — I read the diff.
